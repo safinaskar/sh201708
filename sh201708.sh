@@ -84,6 +84,7 @@ sh201708_unit_test(){
 			[ "$EXPECTED_ERR" = "non-empty" ] && ! [ -s "$REAL_ERR_FILE" ] && printf -- '\033[1;31mExpected error: non-empty\033[0m\n'
 			[ "$OK" = ok ] && [ "$STATUS" != 0 ] && printf -- '\033[31;1mExpected status: 0\033[0m\n'
 			[ "$OK" = fail ] && [ "$STATUS" = 0 ] && printf -- '\033[31;1mExpected status: non-zero\033[0m\n'
+			:
 
 			# We don't return non-zero here because it is probably "set -e" and we want to allow to run more unit tests
 		)
